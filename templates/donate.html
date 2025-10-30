@@ -1,0 +1,104 @@
+{% extends "base.html" %}
+
+{% block title %}Donate - Legend Academy{% endblock %}
+
+{% block content %}
+
+<!-- Header Section -->
+<section class="bg-gradient-to-r from-orange-500 to-orange-600 text-white py-16">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <h1 class="text-4xl md:text-5xl font-bold mb-4">Support Our Mission</h1>
+        <p class="text-xl">Help us build champions and transform lives through sports</p>
+    </div>
+</section>
+
+<!-- Support Section -->
+<section class="py-16 bg-gray-50">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <!-- Why Donate Section -->
+        <div class="bg-white rounded-lg p-8 card-shadow mb-12">
+            <h2 class="text-3xl font-bold text-gray-800 mb-6 text-center">Why Your Support Matters</h2>
+            <div class="w-24 h-1 bg-orange-500 mx-auto mb-8"></div>
+            
+            <div class="space-y-6 text-gray-700">
+                <div class="flex items-start">
+                    <div class="flex-shrink-0 text-3xl mr-4">🏟️</div>
+                    <div>
+                        <h3 class="font-bold text-lg mb-2">Better Facilities</h3>
+                        <p>Your donations help us improve our training facilities and equipment, providing athletes with the best resources.</p>
+                    </div>
+                </div>
+                
+                <div class="flex items-start">
+                    <div class="flex-shrink-0 text-3xl mr-4">👥</div>
+                    <div>
+                        <h3 class="font-bold text-lg mb-2">Support Underprivileged Athletes</h3>
+                        <p>Help talented athletes from economically weaker backgrounds pursue their sports dreams without financial barriers.</p>
+                    </div>
+                </div>
+                
+                <div class="flex items-start">
+                    <div class="flex-shrink-0 text-3xl mr-4">📚</div>
+                    <div>
+                        <h3 class="font-bold text-lg mb-2">Training Programs</h3>
+                        <p>Fund specialized training programs, workshops, and coaching certifications to enhance our academy's quality.</p>
+                    </div>
+                </div>
+                
+                <div class="flex items-start">
+                    <div class="flex-shrink-0 text-3xl mr-4">🏆</div>
+                    <div>
+                        <h3 class="font-bold text-lg mb-2">Competition Participation</h3>
+                        <p>Enable our athletes to participate in state, national, and international competitions.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Donation QR Code Section -->
+        <div class="bg-gradient-to-br from-orange-50 to-amber-50 rounded-lg p-8 md:p-12 card-shadow text-center">
+            <h2 class="text-3xl font-bold text-gray-800 mb-4">Make a Donation</h2>
+            <p class="text-gray-600 mb-8 text-lg">Scan the QR code below to donate via UPI</p>
+            
+            <div class="bg-white rounded-lg p-8 inline-block card-shadow mb-6">
+                <img src="{{ url_for('static', filename='assets/upi.jpg') }}" 
+                     alt="UPI Payment QR Code" 
+                     class="w-64 h-64 mx-auto object-contain"
+                     onerror="this.onerror=null; this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22256%22 height=%22256%22%3E%3Crect width=%22256%22 height=%22256%22 fill=%22%23f3f4f6%22/%3E%3Ctext x=%2250%25%22 y=%2250%25%22 dominant-baseline=%22middle%22 text-anchor=%22middle%22 font-family=%22monospace%22 font-size=%2224%22 fill=%22%239ca3af%22%3EUPI QR Code%3C/text%3E%3C/svg%3E';">
+            </div>
+            
+            <div class="space-y-4">
+                <p class="text-gray-700 font-semibold text-lg">
+                    🏦 UPI ID: <span class="text-orange-600">meherdishant702@oksbi</span>
+                </p>
+                <p class="text-gray-600">
+                    Or contact us directly for bank transfer details
+                </p>
+            </div>
+            
+            <div class="mt-8 pt-8 border-t border-gray-300">
+                <p class="text-sm text-gray-500 mb-4">Every contribution, big or small, makes a difference!</p>
+                <div class="flex flex-col sm:flex-row justify-center gap-4">
+                    <a href="mailto:legendacademy45official@gmail.com   " class="bg-orange-500 text-white px-6 py-3 rounded-lg hover:bg-orange-600 transition font-medium">
+                        ✉️ Email Us
+                    </a>
+                    <a href="tel:+918767775832" class="bg-gray-700 text-white px-6 py-3 rounded-lg hover:bg-gray-800 transition font-medium">
+                        📞 Call Us
+                    </a>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Thank You Message -->
+        <div class="mt-12 text-center">
+            <h3 class="text-2xl font-bold text-gray-800 mb-4">Thank You for Your Generosity! 🙏</h3>
+            <p class="text-gray-600 max-w-2xl mx-auto">
+                Your support helps us continue our mission of nurturing young talent and building champions. 
+                Together, we're creating a brighter future through sports.
+            </p>
+        </div>
+    </div>
+</section>
+
+{% endblock %}

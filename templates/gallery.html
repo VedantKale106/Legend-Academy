@@ -1,0 +1,51 @@
+{% extends "base.html" %}
+
+{% block title %}Gallery - Legend Academy{% endblock %}
+
+{% block content %}
+
+<!-- Header Section -->
+<section class="bg-gradient-to-r from-orange-500 to-orange-600 text-white py-16">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <h1 class="text-4xl md:text-5xl font-bold mb-4">Our Gallery</h1>
+        <p class="text-xl">Capturing moments of excellence, dedication, and achievement</p>
+    </div>
+</section>
+
+<!-- Gallery Grid -->
+<section class="py-16 bg-gray-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        {% if images %}
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            {% for image in images %}
+            <div class="bg-white rounded-lg overflow-hidden card-shadow hover:shadow-xl transition transform hover:scale-105">
+                <img src="{{ url_for('static', filename='images/' + image) }}" 
+                     alt="Legend Academy - {{ image }}" 
+                     class="w-full h-64 object-cover">
+                
+            </div>
+            {% endfor %}
+        </div>
+        {% else %}
+        <div class="text-center py-16">
+            <div class="text-6xl mb-4">📸</div>
+            <h3 class="text-2xl font-bold text-gray-700 mb-4">Gallery Coming Soon</h3>
+            <p class="text-gray-600">We're preparing amazing photos to showcase our academy. Check back soon!</p>
+            <p class="text-sm text-gray-500 mt-4">Place your images in the <code class="bg-gray-200 px-2 py-1 rounded">static/images</code> folder</p>
+        </div>
+        {% endif %}
+    </div>
+</section>
+
+<!-- CTA Section -->
+<section class="py-16 bg-white">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <h2 class="text-3xl font-bold text-gray-800 mb-6">Want to Be Part of Our Story?</h2>
+        <p class="text-gray-600 text-lg mb-8">Join Legend Academy and create your own success story!</p>
+        <a href="{{ url_for('contact') }}" class="inline-block bg-orange-500 text-white px-8 py-4 rounded-lg hover:bg-orange-600 transition font-bold text-lg">
+            Get Started Today
+        </a>
+    </div>
+</section>
+
+{% endblock %}

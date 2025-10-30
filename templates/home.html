@@ -1,0 +1,250 @@
+{% extends "base.html" %}
+
+{% block title %}Home - Legend Academy{% endblock %}
+
+{% block content %}
+
+<!-- Hero Section -->
+<section class="hero-gradient text-white py-20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <h1 class="text-4xl md:text-6xl font-bold mb-6">Welcome to Legend Academy</h1>
+        <p class="text-xl md:text-2xl mb-8">Where Champions are Born and Legends are Made</p>
+        <div class="flex flex-col sm:flex-row justify-center gap-4">
+            <a href="{{ url_for('contact') }}" class="bg-white text-orange-600 px-8 py-3 rounded-lg font-bold hover:bg-gray-100 transition">
+                Join Us Today
+            </a>
+            <a href="{{ url_for('gallery') }}" class="bg-orange-700 text-white px-8 py-3 rounded-lg font-bold hover:bg-orange-800 transition">
+                View Gallery
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- About Academy Section -->
+<section class="py-16 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-12">
+            <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">About Legend Academy</h2>
+            <div class="w-24 h-1 bg-orange-500 mx-auto"></div>
+        </div>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+            <div>
+                <p class="text-gray-700 text-lg mb-6 leading-relaxed">
+                    Legend Academy is a premier sports training facility located in the heart of Junnar, Pune. 
+                    We are dedicated to nurturing talent and building champions across multiple sports disciplines.
+                </p>
+                <p class="text-gray-700 text-lg mb-6 leading-relaxed">
+                    Our mission is to provide world-class training, foster discipline, and inspire young athletes 
+                    to reach their full potential. With expert coaching and state-of-the-art facilities, we create 
+                    an environment where dreams transform into achievements.
+                </p>
+                <div class="flex flex-wrap gap-3">
+                    <span class="bg-orange-100 text-orange-700 px-4 py-2 rounded-full text-sm font-semibold">🏃 Running</span>
+                    <span class="bg-orange-100 text-orange-700 px-4 py-2 rounded-full text-sm font-semibold">🏀 Basketball</span>
+                    <span class="bg-orange-100 text-orange-700 px-4 py-2 rounded-full text-sm font-semibold">🤾 Handball</span>
+                    <span class="bg-orange-100 text-orange-700 px-4 py-2 rounded-full text-sm font-semibold">🧘 Yoga</span>
+                    <span class="bg-orange-100 text-orange-700 px-4 py-2 rounded-full text-sm font-semibold">⚡ Athletics</span>
+                </div>
+            </div>
+            
+            <div class="card-shadow rounded-lg p-8 bg-gradient-to-br from-orange-50 to-amber-50">
+                <h3 class="text-2xl font-bold text-gray-800 mb-4">Our Vision</h3>
+                <p class="text-gray-700 mb-6">
+                    To become the leading sports academy in Maharashtra, recognized for excellence in training, 
+                    character building, and producing athletes who excel not just in sports, but in life.
+                </p>
+                <div class="bg-white rounded-lg p-4 mb-4">
+                    <p class="font-semibold text-orange-600">📍 Location</p>
+                    <p class="text-gray-600">Junnar, Pune, Maharashtra</p>
+                </div>
+                <a href="https://maps.app.goo.gl/uqr5rHQ7RioesdoR9?g_st=aw" target="_blank" 
+                   class="block text-center bg-orange-500 text-white px-6 py-3 rounded-lg hover:bg-orange-600 transition font-medium">
+                    📍 View on Google Maps
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Sports We Offer -->
+<section class="py-16 bg-gray-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-12">
+            <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Sports We Offer</h2>
+            <div class="w-24 h-1 bg-orange-500 mx-auto"></div>
+        </div>
+        
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+            
+            <div class="bg-white rounded-lg p-6 card-shadow hover:shadow-xl transition">
+                <div class="text-4xl mb-4">🏃</div>
+                <h3 class="text-xl font-bold text-gray-800 mb-3">Running</h3>
+                <p class="text-gray-600">Professional running training for sprints, middle distance, and marathon preparation.</p>
+            </div>
+            
+            <div class="bg-white rounded-lg p-6 card-shadow hover:shadow-xl transition">
+                <div class="text-4xl mb-4">🏀</div>
+                <h3 class="text-xl font-bold text-gray-800 mb-3">Basketball</h3>
+                <p class="text-gray-600">Complete basketball coaching covering fundamentals, teamwork, and competitive strategies.</p>
+            </div>
+            
+            <div class="bg-white rounded-lg p-6 card-shadow hover:shadow-xl transition">
+                <div class="text-4xl mb-4">🤾</div>
+                <h3 class="text-xl font-bold text-gray-800 mb-3">Handball</h3>
+                <p class="text-gray-600">Expert handball training focusing on technique, speed, and tactical gameplay.</p>
+            </div>
+            
+            <div class="bg-white rounded-lg p-6 card-shadow hover:shadow-xl transition">
+                <div class="text-4xl mb-4">🧘</div>
+                <h3 class="text-xl font-bold text-gray-800 mb-3">Yoga</h3>
+                <p class="text-gray-600">Holistic yoga sessions for flexibility, mental wellness, and athletic performance enhancement.</p>
+            </div>
+            
+            <div class="bg-white rounded-lg p-6 card-shadow hover:shadow-xl transition">
+                <div class="text-4xl mb-4">⚡</div>
+                <h3 class="text-xl font-bold text-gray-800 mb-3">Athletics</h3>
+                <p class="text-gray-600">Comprehensive athletics training including track and field events, jumps, and throws.</p>
+            </div>
+            
+            <div class="bg-white rounded-lg p-6 card-shadow hover:shadow-xl transition bg-gradient-to-br from-orange-100 to-amber-100">
+                <div class="text-4xl mb-4">🏆</div>
+                <h3 class="text-xl font-bold text-gray-800 mb-3">More Coming Soon</h3>
+                <p class="text-gray-600">We're constantly expanding our programs. Stay tuned for more sports!</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Testimonials Section -->
+<section class="py-16 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-12">
+            <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">What Our Reviews Say</h2>
+            <div class="w-24 h-1 bg-orange-500 mx-auto mb-4"></div>
+            <p class="text-gray-600 text-lg">Real stories from our amazing athletes and their families</p>
+        </div>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            
+            <!-- Testimonial 1 -->
+            <div class="bg-gradient-to-br from-orange-50 to-amber-50 rounded-lg p-6 card-shadow testimonial-card">
+                <div class="flex items-center mb-4">
+                    <div class="w-16 h-16 bg-gradient-to-br from-orange-500 to-orange-600 rounded-full flex items-center justify-center text-white text-2xl font-bold mr-4">
+                        SS
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-gray-800">Rajesh doke</h4>
+                        <p class="text-sm text-orange-600">Parent</p>
+                    </div>
+                </div>
+                <div class="text-yellow-500 mb-3">⭐⭐⭐⭐⭐</div>
+                <p class="text-gray-700 italic leading-relaxed">
+                    "Seeing my son's transformation at Legend Academy has been incredible. Coach Dishant's guidance 
+                    has not only improved his basketball skills but also instilled discipline and confidence. He's now 
+                    competing at state level!"
+                </p>
+            </div>
+            
+            <!-- Testimonial 2 -->
+            <div class="bg-gradient-to-br from-orange-50 to-amber-50 rounded-lg p-6 card-shadow testimonial-card">
+                <div class="flex items-center mb-4">
+                    <div class="w-16 h-16 bg-gradient-to-br from-orange-500 to-orange-600 rounded-full flex items-center justify-center text-white text-2xl font-bold mr-4">
+                        RK
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-gray-800">Nilesh meher</h4>
+                        <p class="text-sm text-orange-600">Parent</p>
+                    </div>
+                </div>
+                <div class="text-yellow-500 mb-3">⭐⭐⭐⭐⭐</div>
+                <p class="text-gray-700 italic leading-relaxed">
+                    "As a parent, I couldn't be happier with my daughter's progress at Legend Academy. The professional 
+                    training environment and Coach's attention to each student is remarkable. My daughter has won 
+                    multiple medals since joining!"
+                </p>
+            </div>
+            
+            <!-- Testimonial 3 -->
+            <div class="bg-gradient-to-br from-orange-50 to-amber-50 rounded-lg p-6 card-shadow testimonial-card">
+                <div class="flex items-center mb-4">
+                    <div class="w-16 h-16 bg-gradient-to-br from-orange-500 to-orange-600 rounded-full flex items-center justify-center text-white text-2xl font-bold mr-4">
+                        PM
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-gray-800">Bele Bhagvan</h4>
+                        <p class="text-sm text-orange-600">Parent</p>
+                    </div>
+                </div>
+                <div class="text-yellow-500 mb-3">⭐⭐⭐⭐⭐</div>
+                <p class="text-gray-700 italic leading-relaxed">
+                    "Coach Dishant has been a true mentor to my son. The values and discipline taught here go beyond 
+                    sports. We've seen tremendous improvement in both his handball skills and overall personality."
+                </p>
+            </div>
+            
+        </div>
+        
+        <!-- CTA for Testimonials -->
+        <div class="text-center mt-12">
+            <p class="text-gray-600 mb-6 text-lg">Ready to write your own success story?</p>
+            <a href="{{ url_for('contact') }}" class="inline-block bg-orange-500 text-white px-8 py-4 rounded-lg hover:bg-orange-600 transition font-bold text-lg">
+                Join Legend Academy Today
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- Coach Section -->
+<section class="py-16 bg-gray-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-12">
+            <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Meet Our Coach</h2>
+            <div class="w-24 h-1 bg-orange-500 mx-auto"></div>
+        </div>
+        
+        <div class="max-w-3xl mx-auto bg-gradient-to-br from-orange-50 to-amber-50 rounded-lg p-8 card-shadow">
+            <div class="text-center">
+                <div class="w-32 h-32 mx-auto mb-6 overflow-hidden rounded-full">
+                    <img src="{{ url_for('static', filename='assets/coach.jpg') }}" 
+                         alt="Coach Dishant Meher"
+                         class="w-full h-full object-cover transform scale-150">
+                </div>
+                <h3 class="text-2xl md:text-3xl font-bold text-gray-800 mb-2">Dishant Meher</h3>
+                <p class="text-orange-600 font-semibold mb-6">Head Coach & Founder</p>
+                <p class="text-gray-700 text-lg leading-relaxed mb-6">
+                    With years of experience in sports training and athlete development, Coach Dishant Meher 
+                    brings expertise, passion, and dedication to every training session. His coaching philosophy 
+                    focuses on building not just skilled athletes, but well-rounded individuals with strong 
+                    character and determination.
+                </p>
+                <div class="flex flex-col sm:flex-row justify-center gap-4">
+                    <a href="tel:+918767775832" class="bg-orange-500 text-white px-6 py-3 rounded-lg hover:bg-orange-600 transition font-medium">
+                        📞 +91 87677 75832
+                    </a>
+                    <a href="mailto:legendacademy45official@gmail.com" class="bg-gray-700 text-white px-6 py-3 rounded-lg hover:bg-gray-800 transition font-medium">
+                        ✉️ Email Coach
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Social Media CTA -->
+<section class="py-16 bg-white">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-6">Connect With Us</h2>
+        <p class="text-gray-600 text-lg mb-8">Follow our journey and stay updated with the latest news, events, and achievements!</p>
+        <div class="flex flex-col sm:flex-row justify-center gap-4">
+            <a href="https://www.instagram.com/legend___academy_junnar/" target="_blank" class="bg-gradient-to-r from-orange-500 to-pink-600 text-white px-8 py-4 rounded-lg hover:from-orange-600 hover:to-pink-700 transition font-bold text-lg">
+                📷 Follow on Instagram
+            </a>
+            <a href="https://www.facebook.com/share/1DZtKNwjwC/" target="_blank" class="bg-blue-600 text-white px-8 py-4 rounded-lg hover:bg-blue-700 transition font-bold text-lg">
+                📘 Like on Facebook
+            </a>
+        </div>
+    </div>
+</section>
+
+{% endblock %}

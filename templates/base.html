@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Legend Academy{% endblock %}</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .nav-link { transition: all 0.3s ease; }
+        .nav-link:hover { transform: translateY(-2px); }
+        .hero-gradient { background: linear-gradient(135deg, #f97316 0%, #ea580c 100%); }
+        .card-shadow { box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06); }
+        .testimonial-card { transition: transform 0.3s ease; }
+        .testimonial-card:hover { transform: translateY(-8px); }
+    </style>
+</head>
+<body class="bg-gray-50">
+    
+    <!-- Navigation Bar -->
+    <nav class="bg-white shadow-lg sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex-shrink-0">
+                    <a href="{{ url_for('home') }}" class="text-2xl font-bold text-orange-600">
+                        🏆 Legend Academy
+                    </a>
+                </div>
+                
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex space-x-8">
+                    <a href="{{ url_for('home') }}" class="nav-link text-gray-700 hover:text-orange-600 px-3 py-2 font-medium">Home</a>
+                    <a href="{{ url_for('gallery') }}" class="nav-link text-gray-700 hover:text-orange-600 px-3 py-2 font-medium">Gallery</a>
+                    <a href="{{ url_for('donate') }}" class="nav-link text-gray-700 hover:text-orange-600 px-3 py-2 font-medium">Donate</a>
+                    <a href="{{ url_for('contact') }}" class="nav-link text-gray-700 hover:text-orange-600 px-3 py-2 font-medium">Contact</a>
+                </div>
+                
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden">
+                    <button id="mobile-menu-btn" class="text-gray-700 hover:text-orange-600 focus:outline-none">
+                        <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t">
+            <div class="px-2 pt-2 pb-3 space-y-1">
+                <a href="{{ url_for('home') }}" class="block px-3 py-2 text-gray-700 hover:bg-orange-50 hover:text-orange-600 rounded">Home</a>
+                <a href="{{ url_for('gallery') }}" class="block px-3 py-2 text-gray-700 hover:bg-orange-50 hover:text-orange-600 rounded">Gallery</a>
+                <a href="{{ url_for('donate') }}" class="block px-3 py-2 text-gray-700 hover:bg-orange-50 hover:text-orange-600 rounded">Donate</a>
+                <a href="{{ url_for('contact') }}" class="block px-3 py-2 text-gray-700 hover:bg-orange-50 hover:text-orange-600 rounded">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main>
+        {% block content %}{% endblock %}
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white mt-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                
+                <!-- About Section -->
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Legend Academy</h3>
+                    <p class="text-gray-300 text-sm">Building champions through dedication, discipline, and passion for sports.</p>
+                </div>
+                
+                <!-- Contact Info -->
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Contact Us</h3>
+                    <p class="text-gray-300 text-sm mb-2">📍 Junnar, Pune, Maharashtra</p>
+                    <p class="text-gray-300 text-sm mb-2">📞 +91 87677 75832</p>
+                    <p class="text-gray-300 text-sm">✉️ legendacademy45official@gmail.com</p>
+                </div>
+                
+                <!-- Social Links -->
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Follow Us</h3>
+                    <div class="flex space-x-4">
+                        <a href="https://www.instagram.com/legend___academy_junnar/" target="_blank" class="bg-pink-600 hover:bg-pink-700 px-4 py-2 rounded-lg text-sm font-medium transition">
+                            📷 Instagram
+                        </a>
+                        <a href="https://www.facebook.com/share/1DZtKNwjwC/" target="_blank" class="bg-blue-600 hover:bg-blue-700 px-4 py-2 rounded-lg text-sm font-medium transition">
+                            📘 Facebook
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-700 mt-8 pt-8 text-center">
+                <p class="text-gray-400 text-sm">&copy; 2025 Legend Academy. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Mobile Menu Toggle Script -->
+    <script>
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+    </script>
+</body>
+</html>
