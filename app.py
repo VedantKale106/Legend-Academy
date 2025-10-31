@@ -21,11 +21,14 @@ def home():
 
 @app.route('/gallery')
 def gallery():
-    image_folder = os.path.join(app.static_folder, 'images')
-    images = []
-    if os.path.exists(image_folder):
-        images = [f for f in os.listdir(image_folder) if f.lower().endswith(('.png', '.jpg', '.jpeg', '.gif'))]
-    return render_template('gallery.html', images=images)
+    media_folder = os.path.join(app.static_folder, 'images')
+    media = []
+    if os.path.exists(media_folder):
+        media = [f for f in os.listdir(media_folder) 
+                if f.lower().endswith(('.png', '.jpg', '.jpeg', '.gif', '.webp', '.bmp',
+                                      '.mp4', '.webm', '.ogg', '.mov', '.avi'))]
+    return render_template('gallery.html', media=media)
+
 
 @app.route('/donate')
 def donate():

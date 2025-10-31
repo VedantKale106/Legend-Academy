@@ -7,45 +7,102 @@
 <!-- Header Section -->
 <section class="bg-gradient-to-r from-orange-500 to-orange-600 text-white py-16">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        <h1 class="text-4xl md:text-5xl font-bold mb-4">Our Gallery</h1>
-        <p class="text-xl">Capturing moments of excellence, dedication, and achievement</p>
+        <h1 class="text-4xl md:text-5xl font-bold mb-4 animate-fade-in">Our Gallery</h1>
+        <p class="text-xl opacity-90">Capturing moments of excellence, dedication, and achievement</p>
     </div>
 </section>
 
 <!-- Gallery Grid -->
-<section class="py-16 bg-gray-50">
+<section class="py-16 bg-gradient-to-b from-gray-50 to-gray-100">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {% if images %}
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {% for image in images %}
-            <div class="bg-white rounded-lg overflow-hidden card-shadow hover:shadow-xl transition transform hover:scale-105">
-                <img src="{{ url_for('static', filename='images/' + image) }}" 
-                     alt="Legend Academy - {{ image }}" 
-                     class="w-full h-64 object-cover">
-                
+        {% if media %}
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+            {% for item in media %}
+            <div class="group bg-gradient-to-br from-white to-orange-50 rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2">
+                <div class="p-4">
+                    <!-- Check if file is a video -->
+                    {% if item.lower().endswith(('.mp4', '.webm', '.ogg', '.mov', '.avi')) %}
+                    <div class="relative rounded-xl overflow-hidden border-4 border-gradient shadow-xl">
+                        <div class="absolute inset-0 bg-gradient-to-tr from-orange-400/20 to-transparent pointer-events-none z-10 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                        <video 
+                            class="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-105" 
+                            autoplay
+                            muted 
+                            loop
+                            playsinline
+                            preload="metadata">
+                            <source src="{{ url_for('static', filename='images/' + item) }}" type="video/{{ item.split('.')[-1] }}">
+                            Your browser does not support the video tag.
+                        </video>
+                        <div class="absolute top-3 right-3 bg-gradient-to-r from-orange-500 to-red-500 text-white px-3 py-1 rounded-full text-xs font-bold shadow-lg flex items-center gap-1 z-20 animate-pulse">
+                            <svg class="w-3 h-3" fill="currentColor" viewBox="0 0 20 20">
+                                <path d="M6.3 2.841A1.5 1.5 0 004 4.11V15.89a1.5 1.5 0 002.3 1.269l9.344-5.89a1.5 1.5 0 000-2.538L6.3 2.84z"/>
+                            </svg>
+                            VIDEO
+                        </div>
+                    </div>
+                    
+                    <!-- Check if file is an image -->
+                    {% elif item.lower().endswith(('.jpg', '.jpeg', '.png', '.gif', '.webp', '.bmp')) %}
+                    <div class="relative rounded-xl overflow-hidden border-4 border-gradient shadow-xl">
+                        <div class="absolute inset-0 bg-gradient-to-tr from-orange-400/20 to-transparent pointer-events-none z-10 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                        <img 
+                            src="{{ url_for('static', filename='images/' + item) }}" 
+                            alt="Legend Academy - {{ item }}" 
+                            class="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110">
+                        <div class="absolute bottom-3 left-3 bg-white/90 backdrop-blur-sm text-orange-600 px-3 py-1 rounded-full text-xs font-bold shadow-lg opacity-0 group-hover:opacity-100 transition-all duration-300 transform translate-y-2 group-hover:translate-y-0 z-20">
+                            <svg class="w-3 h-3 inline" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M4 3a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V5a2 2 0 00-2-2H4zm12 12H4l4-8 3 6 2-4 3 6z" clip-rule="evenodd"/>
+                            </svg>
+                            PHOTO
+                        </div>
+                    </div>
+                    {% endif %}
+                </div>
             </div>
             {% endfor %}
         </div>
         {% else %}
         <div class="text-center py-16">
-            <div class="text-6xl mb-4">📸</div>
+            <div class="text-6xl mb-4 animate-bounce">📸🎥</div>
             <h3 class="text-2xl font-bold text-gray-700 mb-4">Gallery Coming Soon</h3>
-            <p class="text-gray-600">We're preparing amazing photos to showcase our academy. Check back soon!</p>
-            <p class="text-sm text-gray-500 mt-4">Place your images in the <code class="bg-gray-200 px-2 py-1 rounded">static/images</code> folder</p>
+            <p class="text-gray-600">We're preparing amazing photos and videos to showcase our academy. Check back soon!</p>
+            <p class="text-sm text-gray-500 mt-4">Place your images and videos in the <code class="bg-gray-200 px-2 py-1 rounded">static/images</code> folder</p>
         </div>
         {% endif %}
     </div>
 </section>
 
 <!-- CTA Section -->
-<section class="py-16 bg-white">
+<section class="py-16 bg-gradient-to-r from-orange-500 to-orange-600">
     <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        <h2 class="text-3xl font-bold text-gray-800 mb-6">Want to Be Part of Our Story?</h2>
-        <p class="text-gray-600 text-lg mb-8">Join Legend Academy and create your own success story!</p>
-        <a href="{{ url_for('contact') }}" class="inline-block bg-orange-500 text-white px-8 py-4 rounded-lg hover:bg-orange-600 transition font-bold text-lg">
+        <h2 class="text-3xl font-bold text-white mb-6">Want to Be Part of Our Story?</h2>
+        <p class="text-white/90 text-lg mb-8">Join Legend Academy and create your own success story!</p>
+        <a href="{{ url_for('contact') }}" class="inline-block bg-white text-orange-600 px-8 py-4 rounded-lg hover:bg-gray-100 transition-all transform hover:scale-105 font-bold text-lg shadow-xl">
             Get Started Today
         </a>
     </div>
 </section>
+
+<style>
+    .border-gradient {
+        border-image: linear-gradient(135deg, #f97316, #fb923c, #fdba74) 1;
+    }
+    
+    @keyframes fade-in {
+        from {
+            opacity: 0;
+            transform: translateY(-20px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+    
+    .animate-fade-in {
+        animation: fade-in 0.8s ease-out;
+    }
+</style>
 
 {% endblock %}
